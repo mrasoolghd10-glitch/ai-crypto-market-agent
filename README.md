@@ -1,96 +1,45 @@
-# AI Crypto Market Agent
+# Market Monitoring & Telegram Approval Workflows
 
-An automated crypto market monitoring and signal evaluation system built with n8n, APIs, Telegram and structured workflow monitoring.
+A modular n8n automation project for collecting market data, tracking candidate events, coordinating Telegram review, and following outcomes.
 
-## Overview
+## Purpose
 
-This project is a modular AI-assisted automation system designed to monitor cryptocurrency markets, detect important market events, evaluate signal quality, track outcomes and automatically generate performance and system health reports.
+Market monitoring requires repeated collection and follow-up. This project organizes those tasks into separate workflows, with Google Sheets storing records and Telegram providing notifications and review interactions.
 
-The system was designed as multiple independent workflows rather than one large automation, making it easier to maintain, monitor and scale.
+## Workflow architecture
 
-## Core Features
+| Module | Responsibility |
+| --- | --- |
+| Watchlist refresh | Prepare a market watchlist using CoinGecko and Binance information. |
+| Market-event scanner | Retrieve candle data, analyze candidate events, and write event records. |
+| Telegram approval handling | Coordinate review decisions and publication-related status checks. |
+| Outcome monitoring | Revisit pending events or signals and record evaluated outcomes. |
+| Performance reporting | Prepare summaries from recorded events and results. |
+| Health and error monitoring | Check workflow execution health and send operational alerts. |
 
-* Automated crypto market scanning
-* Multi-timeframe market analysis
-* Market event detection
-* Signal scoring and filtering
-* Telegram notifications
-* Signal outcome tracking
-* Automated performance reports
-* Workflow health monitoring
-* Watchlist management
-* Error monitoring
-* Scheduled workflow execution
-* Google Sheets data storage
+## Tools
 
-## Workflow Architecture
+n8n, HTTP APIs, JavaScript workflow steps, Google Sheets, Telegram, Binance, and CoinGecko.
 
-The system includes separate workflows for:
+## Operating scope
 
-1. Market Event Scanner
-2. Signal Processing
-3. Signal Outcome Monitoring
-4. Performance Reporting
-5. Watchlist Refresh
-6. Workflow Health Monitoring
-7. Error Monitoring
+The project has been developed as a multi-workflow system. Its documented handoff scope is private-admin delivery and shadow evaluation, with public-channel publication disabled. Approval and publishing-related components should not be read as a claim that public publishing is enabled.
 
-## Technologies
+This repository presents the automation architecture. It does not establish profitable trading performance or validated financial predictions. Live reliability and outcome metrics require dated execution records.
 
-* n8n
-* REST APIs
-* Telegram Bot API
-* Google Sheets
-* JavaScript
-* Webhooks
-* Crypto Market APIs
-* AI-assisted automation logic
+## What this project demonstrates
 
-## Example Workflow
+- Coordinating scheduled workflows around shared records.
+- Connecting external APIs to Telegram and Google Sheets.
+- Separating candidate detection, review, follow-up, and reporting.
+- Adding health checks and a dedicated error-alert workflow.
 
-Market Data
-↓
-Market Scanner
-↓
-Event Detection
-↓
-Signal Evaluation
-↓
-Filtering & Scoring
-↓
-Telegram Notification
-↓
-Outcome Monitoring
-↓
-Performance Report
+## Reviewing the implementation
 
-## Monitoring
+Workflow screenshots document the structure. A reproducible release should include sanitized workflow exports, configuration instructions, and a recorded end-to-end demonstration. Screenshots alone do not establish runtime behavior.
 
-The system includes dedicated monitoring workflows to detect workflow failures, stale data and unhealthy execution states.
+Before publishing exports or execution data, remove credentials, private endpoints, personal identifiers, and customer data.
 
-## Reporting
+## Related work
 
-Automated reports provide information about:
-
-* Detected market events
-* Eligible signals
-* Signal performance
-* Average returns
-* Validation progress
-* Workflow health
-
-## Project Status
-
-Completed working automation system with market scanning, signal evaluation, reporting and workflow monitoring.
-
-## Security
-
-API keys, Telegram tokens, credential IDs and other private configuration values are excluded from this public repository.
-
-## Screenshots
-
-Screenshots of the workflows, Telegram outputs and automated reports will be added to this repository.
-
-## About This Project
-
-This is an independent portfolio project demonstrating the design of modular AI automation systems using n8n, APIs, external services and automated monitoring.
+[AI-assisted news curation and publishing](https://github.com/mrasoolghd10-glitch/ai-crypto-news-automation) · [LinkedIn](https://www.linkedin.com/in/mohammad-rasool-gholami/)
